@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitalink - Portal de Saúde</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        
+        <div class="logo">
+            <img src="/image-removebg-preview (1).png" alt="Logo Vitalink">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sintomas">Controle de Sintomas</a></li>
+                <li><a href="#remedios">Meus Remédios</a></li>
+                <li><a href="#alertas">Alertas de Saúde</a></li>
+                <li><a href="#clinicas">Mapa de Clínicas</a></li>
+                <li><a href="#dicas">Dicas de Saúde</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Controle de Sintomas -->
+    <section id="sintomas">
+        <h2>Controle de Sintomas</h2>
+        <form id="form-sintomas">
+            <label for="sintoma">Sintoma:</label>
+            <input type="text" id="sintoma" placeholder="Ex.: Dor de cabeça" required>
+            <label for="intensidade">Intensidade:</label>
+            <input type="range" id="intensidade" min="0" max="10">
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+            <button type="submit">Registrar Sintoma</button>
+        </form>
+        <ul id="historico-sintomas"></ul>
+        <button id="exportarPdf">Exportar Histórico para PDF</button>
+        <canvas id="graficoSintomas" width="400" height="200"></canvas>
+    </section>
+
+    <!-- Meus Remédios -->
+    <section id="remedios">
+        <h2>Meus Remédios</h2>
+        <form id="form-remedios">
+            <label for="remedio">Nome do Remédio:</label>
+            <input type="text" id="remedio" placeholder="Ex.: Paracetamol" required>
+            <label for="horario">Horário:</label>
+            <input type="time" id="horario" required>
+            <button type="submit">Adicionar Remédio</button>
+        </form>
+        <ul id="lista-remedios"></ul>
+    </section>
+
+    <!-- Alertas de Saúde -->
+    <section id="alertas">
+        <h2>Alertas em Tempo Real</h2>
+        <div id="alertas-lista">
+            <div class="alerta">
+                <h3>Surto de Dengue</h3>
+                <p>Evite áreas de risco e use repelente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapeamento de Clínicas -->
+    <section id="clinicas">
+        <h2>Mapa de Clínicas e Hospitais</h2>
+        <div id="mapa">Carregando mapa...</div>
+    </section>
+
+    <!-- Dicas de Saúde -->
+    <section id="dicas">
+        <h2>Dicas Preventivas</h2>
+        <ul>
+            <li>Pratique exercícios físicos regularmente.</li>
+            <li>Durma pelo menos 7 horas por noite.</li>
+            <li>Mantenha uma alimentação equilibrada.</li>
+        </ul>
+    </section>
+
+    <!-- Avaliação de Sintomas -->
+    <section id="teste-saude">
+        <form id="form-saude">
+            <h2>Avaliação de Sintomas</h2>
+            <p>Responda às perguntas abaixo para obter um possível diagnóstico e recomendações.</p>
+
+            <div class="pergunta">
+                <p>1. Você teve febre nos últimos dias?</p>
+                <label><input type="radio" name="q1" value="2" required> Sim</label>
+                <label><input type="radio" name="q1" value="0"> Não</label>
+            </div>
+
+            <div class="pergunta">
+                <p>2. Está sentindo dor de cabeça frequentemente?</p>
+                <label><input type="radio" name="q2" value="2" required> Sim</label>
+                <label><input type="radio" name="q2" value="0"> Não</label>
+            </div>
+
+            <div class="pergunta">
+                <p>3. Você teve dificuldades para respirar?</p>
+                <label><input type="radio" name="q3" value="3" required> Sim</label>
+                <label><input type="radio" name="q3" value="0"> Não</label>
+            </div>
+
+            <div class="pergunta">
+                <p>4. Sente cansaço extremo mesmo após descansar?</p>
+                <label><input type="radio" name="q4" value="3" required> Sim</label>
+                <label><input type="radio" name="q4" value="0"> Não</label>
+            </div>
+
+            <div class="pergunta">
+                <p>5. Teve episódios de náusea ou vômito?</p>
+                <label><input type="radio" name="q5" value="1" required> Sim</label>
+                <label><input type="radio" name="q5" value="0"> Não</label>
+            </div>
+
+            <button type="submit">Obter Diagnóstico</button>
+        </form>
+        <div id="diagnostico"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Vitalink - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

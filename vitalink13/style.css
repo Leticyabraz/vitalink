@@ -1,0 +1,156 @@
+:root {
+    --fundo: #F7F9FB;
+    --texto: #2E3A59;
+    --primaria: #0055A5;
+    --secundaria: #8AC6D1;
+    --destaque: #FF6F61;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fundo);
+    margin: 0;
+    color: var(--texto);
+    text-align: center;
+}
+
+header {
+    background-color: var(--primaria);
+    color: white;
+    padding: 10px 0;
+}
+
+header .logo img {
+    width: 120px;
+}
+
+header nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 20px;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input,
+form button {
+    margin: 10px 0;
+    padding: 8px;
+    width: 80%;
+    max-width: 300px;
+}
+
+form button {
+    background-color: var(--primaria);
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--destaque);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primaria);
+    color: white;
+    margin-top: 20px;
+}
+
+#teste-saude {
+    max-width: 600px;
+    margin: auto;
+}
+/* Estilo para a área do logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primaria);
+    margin: 0;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 20px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: var(--destaque);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--secundaria);
+}
+/* Estilo para o sininho de notificação */
+.sininho {
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sininho:hover {
+    color: var(--destaque); /* Muda a cor ao passar o mouse */
+}
